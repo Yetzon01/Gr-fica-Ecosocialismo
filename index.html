@@ -23,6 +23,32 @@
   --violeta: #9b7fe8;
 }
 
+/* --- VIDEO DE FONDO --- */
+.video-bg {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: -1;
+}
+
+/* --- ESTILO GLASSMORPHISM --- */
+body { 
+  background: #000; color: #dde8df; font-family: 'Space Grotesk', sans-serif; 
+  min-height: 100vh;
+}
+
+.panel-iconos, .card, .grafica-header {
+  background: var(--card-glass);
+  backdrop-filter: blur(12px); /* El efecto de desenfoque */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--borde-glass);
+}
+
+/* Ajuste de transparencia en el header */
+header {
+  background: rgba(19, 82, 66, 0.85); 
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--lima);
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: var(--negro); color: var(--texto); font-family: 'Space Grotesk', sans-serif; min-height: 100vh; }
 
