@@ -31,14 +31,13 @@ header {
   padding: 14px 24px; display: flex; align-items: center; justify-content: space-between;
   position: sticky; top: 0; z-index: 300;
 }
+/* Ajuste de logos en header */
+.logo-side { flex: 0 0 80px; }
+.logo-side img { height: 50px; width: auto; object-fit: contain; }
+
+.header-center { text-align: center; flex-grow: 1; }
 .h-title { font-size: 16px; font-weight: 800; color: #fff; text-transform: uppercase; }
 .h-sub { font-size: 10px; color: var(--lima); margin-top: 2px; font-family: 'JetBrains Mono', monospace; }
-.btn-back {
-  background: transparent; border: 1px solid var(--lima); color: var(--lima);
-  padding: 7px 14px; border-radius: 6px; font-size: 11px; font-weight: 700;
-  cursor: pointer; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: .2s;
-}
-.btn-back:hover { background: var(--lima); color: var(--deep); }
 
 #statusbar {
   background: #090b0a; border-bottom: 1px solid var(--borde);
@@ -159,17 +158,26 @@ tbody tr:hover td { background: rgba(180,212,69,.04); }
   .panel-iconos { width: 100%; max-height: 42vh; }
   .grafica-kpis { display: none; }
   .grid-2 { grid-template-columns: 1fr; }
+  header { flex-direction: column; gap: 10px; }
+  .logo-side { display: none; }
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div>
+  <div class="logo-side">
+      <img src="logo1.png" alt="Logo 1">
+  </div>
+  
+  <div class="header-center">
     <div class="h-title">GRÁFICAS DE MAPAS DE RIESGOS COMUNITARIOS</div>
     <div class="h-sub">MUNICIPIO SIMÓN BOLÍVAR · ESTADO ANZOÁTEGUI</div>
   </div>
-  <a href="index.html" class=""></a>
+
+  <div class="logo-side" style="text-align: right;">
+      <img src="logo2.png" alt="Logo 2">
+  </div>
 </header>
 
 <div id="statusbar">
@@ -194,6 +202,7 @@ tbody tr:hover td { background: rgba(180,212,69,.04); }
 </div>
 
 <script>
+// [Tu lógica original de JavaScript se mantiene intacta]
 const _sb = supabase.createClient(
   'https://zezcmftcbbzplhtdqotd.supabase.co',
   'sb_publishable_bNaRcykfZaVdW67HsEf3Tw_rWemQCui'
@@ -203,7 +212,7 @@ const CATEGORIAS = [
   {
     id: 'riesgos', nombre: 'Riesgos Ambientales', emoji: '⚠️', color: '#e85c4a',
     iconos: [
-      { id: 'pozo_derrumbado',     emoji: '⚫', label: 'Pozo Séptico Derrumbado' },
+      { id: 'pozo_derrumbado',      emoji: '⚫', label: 'Pozo Séptico Derrumbado' },
       { id: 'poste_riesgo',        emoji: '⚡', label: 'Poste en Riesgo' },
       { id: 'riesgo_carro',        emoji: '🚗', label: 'Cauchera' },
       { id: 'arbol_v',             emoji: '🏡', label: 'Árbol Riesgo Vivienda' },
@@ -419,7 +428,7 @@ function mostrarGrafica(icono, cat, itemEl) {
 
   // Destruir gráficas previas
   if (chartBarras) { chartBarras.destroy(); chartBarras = null; }
-  if (chartDona)   { chartDona.destroy();   chartDona   = null; }
+  if (chartDona)   { chartDona.destroy();    chartDona    = null; }
 
   // Contar por comuna
   const porComuna = {};
