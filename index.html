@@ -164,7 +164,26 @@ tbody tr:hover td { background: rgba(180,212,69,.04); }
 </head>
 <body>
 
-<header>
+<header>header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  background: var(--deep);
+  border-bottom: 3px solid var(--lima);
+  position: sticky;
+  top: 0;
+  z-index: 300;
+}
+
+.logo-side {
+  flex: 0 0 100px; /* Ancho fijo para que el título central no se mueva */
+}
+
+@media (max-width: 600px) {
+  header { flex-direction: column; gap: 10px; }
+  .logo-side { display: none; } /* Oculta logos en móviles si el espacio es muy pequeño */
+}
   <div>
     <div class="h-title">GRÁFICAS DE MAPAS DE RIESGOS COMUNITARIOS</div>
     <div class="h-sub">MUNICIPIO SIMÓN BOLÍVAR · ESTADO ANZOÁTEGUI</div>
