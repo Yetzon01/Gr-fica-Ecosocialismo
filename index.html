@@ -28,14 +28,23 @@ body { background: var(--negro); color: var(--texto); font-family: 'Space Grotes
 
 header {
   background: var(--deep); border-bottom: 3px solid var(--lima);
-  padding: 14px 24px; display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 24px; display: flex; align-items: center; justify-content: space-between;
   position: sticky; top: 0; z-index: 300;
 }
-/* Ajuste de logos en header */
-.logo-side { flex: 0 0 80px; }
-.logo-side img { height: 50px; width: auto; object-fit: contain; }
 
-.header-center { text-align: center; flex-grow: 1; }
+/* Logos más grandes y con espacio definido */
+.logo-side { 
+  flex: 0 0 150px; 
+  display: flex; 
+  align-items: center;
+}
+.logo-side img { 
+  height: 80px; 
+  width: auto; 
+  object-fit: contain; 
+}
+
+.header-center { text-align: center; flex-grow: 1; padding: 0 15px; }
 .h-title { font-size: 16px; font-weight: 800; color: #fff; text-transform: uppercase; }
 .h-sub { font-size: 10px; color: var(--lima); margin-top: 2px; font-family: 'JetBrains Mono', monospace; }
 
@@ -175,7 +184,7 @@ tbody tr:hover td { background: rgba(180,212,69,.04); }
     <div class="h-sub">MUNICIPIO SIMÓN BOLÍVAR · ESTADO ANZOÁTEGUI</div>
   </div>
 
-  <div class="logo-side" style="text-align: right;">
+  <div class="logo-side" style="justify-content: flex-end;">
       <img src="logo2.png.png" alt="Logo 2">
   </div>
 </header>
