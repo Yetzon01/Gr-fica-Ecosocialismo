@@ -10,36 +10,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
 
 :root {
-  --lima: #B4D445;
-  --card-glass: rgba(19, 22, 20, 0.7); /* Fondo oscuro semitransparente */
-  --borde-glass: rgba(180, 212, 69, 0.2);
+  --lima: #B4D445;
+  --deep: #135242;
+  --negro: #0c0e0d;
+  --card: #131614;
+  --borde: #1e2320;
+  --texto: #dde8df;
+  --muted: #5a6b5e;
+  --rojo: #e85c4a;
+  --naranja: #e8934a;
+  --azul: #4ab3e8;
+  --violeta: #9b7fe8;
 }
 
-/* --- VIDEO DE FONDO --- */
-.video-bg {
-  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-  object-fit: cover; z-index: -1;
-}
-
-/* --- ESTILO GLASSMORPHISM --- */
-body { 
-  background: #000; color: #dde8df; font-family: 'Space Grotesk', sans-serif; 
-  min-height: 100vh;
-}
-
-.panel-iconos, .card, .grafica-header {
-  background: var(--card-glass);
-  backdrop-filter: blur(12px); /* El efecto de desenfoque */
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--borde-glass);
-}
-
-/* Ajuste de transparencia en el header */
-header {
-  background: rgba(19, 82, 66, 0.85); 
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid var(--lima);
-}
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: var(--negro); color: var(--texto); font-family: 'Space Grotesk', sans-serif; min-height: 100vh; }
 
